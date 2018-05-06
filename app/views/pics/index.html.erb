@@ -1,0 +1,7 @@
+<h1>写真一覧</h1>
+<p><%= link_to '写真をアップロード', new_pic_path %></p>
+
+<% @pics.each do |pic| %>
+  <p><%= pic.title %></p>
+  <%= image_tag File.join(root_url, 'pics', pic.file_name), alt: pic.title, width: '300' %>
+<% end %>

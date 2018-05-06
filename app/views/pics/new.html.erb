@@ -1,0 +1,16 @@
+<h1>写真登録</h1>
+
+<%= form_for @pic, multipart: true do |f| %>
+  <p>
+    <%= f.label :title, 'タイトル' %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :file, '写真ファイル' %>
+    <%= f.file_field :file %>
+  </p>
+
+  <%= f.submit 'アップロード' %>
+  <%= link_to 'キャンセル', pics_path %>
+<% end %>
