@@ -10,6 +10,8 @@ class PicsController < ApplicationController
   def create
     @pic = Pic.new(pic_params)
 
+    return render :new if !@pic.valid?
+
     timestamp = Time.current.strftime('%Y%m%d%H%M%S%L')
     @pic.file_name = "#{ timestamp }_#{ @pic.file.original_filename }"
 

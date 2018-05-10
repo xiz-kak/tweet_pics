@@ -1,5 +1,17 @@
 <h1>写真登録</h1>
 
+<% if @pic.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @pic.errors.count %>件のエラーがあります。</h2>
+
+    <ul>
+    <% @pic.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @pic, multipart: true do |f| %>
   <p>
     <%= f.label :title, 'タイトル' %>
