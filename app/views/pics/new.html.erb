@@ -14,13 +14,13 @@
 
 <%= form_for @pic, multipart: true do |f| %>
   <p>
-    <%= f.label :title, 'タイトル' %>
+    <%= f.label :title, 'タイトル(必須/30文字以内)' %>
     <%= f.text_field :title %>
   </p>
 
   <p>
-    <%= f.label :file, '写真ファイル' %>
-    <%= f.file_field :file %>
+    <%= f.label :file, '写真ファイル(必須/JPG,PNG,GIFのみ)' %>
+    <%= f.file_field :file, accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
   </p>
 
   <%= f.submit 'アップロード' %>
