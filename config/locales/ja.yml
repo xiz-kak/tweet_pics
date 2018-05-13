@@ -11,6 +11,9 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+  notices:
+    failed: ツイートに失敗しました。時間をおいて再度お試しください。
+    success: ツイートに成功しました。
   date:
     abbr_day_names:
     - 日

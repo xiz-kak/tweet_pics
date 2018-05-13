@@ -9,6 +9,18 @@
   </head>
 
   <body>
+    <div class="flash-container">
+      <% flash.each do |message_type, message| %>
+        <% if message_type == 'notice' %>
+          <% message_type = 'info '%>
+        <% elsif message_type == 'alert' %>
+          <% message_type = 'danger '%>
+        <% end %>
+        <div class="msg-<%= message_type %>">
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

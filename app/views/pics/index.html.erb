@@ -2,6 +2,15 @@
 <p><%= link_to '写真をアップロード', new_pic_path %></p>
 
 <% @pics.each do |pic| %>
-  <p><%= pic.title %></p>
-  <%= image_tag File.join(root_url, 'pics', pic.file_name), alt: pic.title, width: '300' %>
+  <div class="post-container">
+    <div class="title-container">
+     <%= pic.title %>
+    </div>
+    <div class="pic-container">
+      <%= image_tag File.join(root_url, 'pics', pic.file_name), alt: pic.title, width: '300' %>
+    </div>
+    <p>
+      <%= button_to '画像をツイートする', post_pic_path(pic.id), method: :get %>
+    </p>
+  </div>
 <% end %>
